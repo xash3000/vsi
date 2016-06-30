@@ -1,0 +1,15 @@
+# calculate nth fibonacci number
+
+n := 100;
+a := 0;
+b := 1;
+
+n := n - 1;
+while n > 0 do
+    temp_a := a;
+    a := b;
+    b := temp_a + b;
+    n := n - 1;
+done
+
+print b;  # 354224848179261915075

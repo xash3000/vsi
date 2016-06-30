@@ -1,0 +1,12 @@
+__pycache__/
+tox.ini
+coverage/
+build/
+docs/_build
+*.egg-info/
+*.pyc
+*.swp
+*.egg
+env/
+.workon
+dist

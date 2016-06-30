@@ -1,0 +1,11 @@
+# calculate factorial of a number
+
+n := 10;
+c := n - 1;
+
+while c > 0 do
+    n := n * c;
+    c := c - 1;
+done
+
+print n;  # 3628800

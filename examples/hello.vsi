@@ -1,0 +1,23 @@
+# this is a comment
+
+# variables
+x := 1;
+y := x + 2;
+
+# printing
+print x;
+print y;
+
+# if statements
+if y > x then
+    z := y;
+# optional else
+else
+    z := x;
+done
+
+# while statemnt
+while x < 5 do
+    x := x + 1;
+    print x;
+done
