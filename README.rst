@@ -1,7 +1,7 @@
 vsi
 ---
 
-**v**ery **s**imple **i**nterpreter written in pure python without any
+very simple interpreter written in pure python without any
 third party dependencies.
 
 
@@ -12,6 +12,8 @@ you will need `python <https://www.python.org/downloads/>`_ interpreter and
 `pip <https://pip.pypa.io/en/stable/installing/>`_ package manager
 after that run this command
 
+.. code-block:: bash
+
     $ pip install vsi
 
 **note**: for linux and mac users you may want to prefix command with sudo
@@ -19,6 +21,8 @@ after that run this command
 
 Quick Start
 -----------
+
+.. code-block:: ruby
 
     # this is a comment
 
@@ -47,9 +51,14 @@ Quick Start
 
 save this to hello.vsi file and then
 
+.. code-block:: bash
+
     $ vsi hello.vsi
 
+
 output
+
+.. code-block:: bash
 
     1
     3
