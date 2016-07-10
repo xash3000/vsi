@@ -45,7 +45,7 @@ tokens_exprs = [
     (r'(do)[ \n\t]{1,}', RESERVED, STATEMENT, 0),
     (r'(done)[ \n\t]{1,}', RESERVED, STATEMENT, 0),
     (r'([0-9]+)', NUMBER, INT, 0),
-    (r'([_A-Za-z][A-Za-z0-9_]*)', ID, None, None),
+    (r'([_A-Za-z][A-Za-z0-9_]*)', ID, None, 0),
 ]
 
 

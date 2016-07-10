@@ -16,7 +16,7 @@ after that run this command
 
     $ pip install vsi
 
-**note**: for linux and mac users you may want to prefix command with sudo
+**note**: for linux and mac users you may want to prefix the command with sudo
 
 
 Quick Start
@@ -68,6 +68,24 @@ output
     5
 
 see more examples at examples/ folder
+
+
+Is it tested
+------------
+
+yes, follow the following steps:
+
+.. code-block:: bash
+
+    $ # first clone the repository
+    $ git clone https://github.com/afaki077/vsi.git
+    $ # change directory to the clone repository
+    $ cd vsi
+    $ # install required packages for testing
+    $ pip install -r test-requirements.txt
+    $ # let's run tests
+    $ py.test
+
 
 LICENSE
 -------

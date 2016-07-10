@@ -1,7 +1,8 @@
 import sys
+from .utils import Equality
 
 
-class AST:
+class AST(Equality):
 
     def __init__(self, nodes=None):
         self.nodes = [] if nodes is None else nodes
@@ -17,13 +18,13 @@ class AST:
         self.nodes.append(node)
 
 
-class printStatement:
+class PrintStatement(Equality):
 
     def __init__(self, expr):
         self.expr = expr
 
     def __repr__(self):
-        return "printStatement({})".format(self.expr)
+        return "PrintStatement({})".format(self.expr)
 
     def eval(self, env):
         value = self.expr.eval(env)
@@ -31,7 +32,7 @@ class printStatement:
         sys.stdout.write("\n")
 
 
-class Integer:
+class Integer(Equality):
 
     def __init__(self, i):
         self.i = i
@@ -43,7 +44,7 @@ class Integer:
         return self.i
 
 
-class Varexpr:
+class Varexpr(Equality):
 
     def __init__(self, name):
         self.name = name
@@ -60,7 +61,7 @@ class Varexpr:
             sys.exit(1)
 
 
-class BinOpexpr:
+class BinOpexpr(Equality):
 
     def __init__(self, op, left, right):
         self.op = op
@@ -68,7 +69,7 @@ class BinOpexpr:
         self.left = left
 
     def __repr__(self):
-        return "BinOpexpr({}, {}, {})".format(self.op, self.right, self.left)
+        return "BinOpexpr({}, {}, {})".format(self.op, self.left, self.right)
 
     def eval(self, env):
         left_value = self.left.eval(env)
@@ -90,7 +91,7 @@ class BinOpexpr:
         return value
 
 
-class RelOpexpr:
+class RelOpexpr(Equality):
 
     def __init__(self, op, left, right):
         self.op = op
@@ -122,7 +123,7 @@ class RelOpexpr:
         return value
 
 
-class Andexpr:
+class Andexpr(Equality):
 
     def __init__(self, left, right):
         self.left = left
@@ -137,7 +138,7 @@ class Andexpr:
         return left_value and right_value
 
 
-class Orexpr:
+class Orexpr(Equality):
 
     def __init__(self, left, right):
         self.left = left
@@ -152,7 +153,7 @@ class Orexpr:
         return left_value or right_value
 
 
-class Notexpr:
+class Notexpr(Equality):
 
     def __init__(self, expr):
         self.expr = expr
@@ -165,7 +166,7 @@ class Notexpr:
         return not value
 
 
-class AssignStatement:
+class AssignStatement(Equality):
 
     def __init__(self, name, expr):
         self.name = name
@@ -179,7 +180,7 @@ class AssignStatement:
         env[self.name] = value
 
 
-class IfStatement:
+class IfStatement(Equality):
 
     def __init__(self, condition, true_stmt, false_stmt):
         self.condition = condition
@@ -201,7 +202,7 @@ class IfStatement:
                 self.false_stmt.eval(env)
 
 
-class WhileStatement:
+class WhileStatement(Equality):
 
     def __init__(self, condition, body):
         self.condition = condition

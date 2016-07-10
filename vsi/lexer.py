@@ -1,8 +1,9 @@
 import re
 import sys
+from .utils import Equality
 
 
-class Token:
+class Token(Equality):
 
     def __init__(self, value, _type, specific_type=None, precedence=0):
         self.value = value
@@ -22,6 +23,10 @@ class Lexer:
         self.tokens_exprs = tokens_exprs
         self.tokens = []
         self.pos = 0
+
+    def __repr__(self):
+        attrs = [self.chars, self.tokens_exprs, self.tokens, self.pos]
+        return "Lexer({}, {}, {}, {})".format(*attrs)
 
     def lex(self):
         while self.pos < len(self.chars):

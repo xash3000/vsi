@@ -1,5 +1,5 @@
 from .ast import (
-    printStatement,
+    PrintStatement,
     AST,
     Integer,
     Varexpr,
@@ -134,7 +134,7 @@ class Parser:
         expr = self.parse_expr()
         self.expect(";")
         self.advance()
-        return printStatement(expr)
+        return PrintStatement(expr)
 
     def parse_expr(self):
         output = []
