@@ -10,7 +10,8 @@ from .ast import (
     Notexpr,
     AssignStatement,
     IfStatement,
-    WhileStatement
+    WhileStatement,
+    Float
 )
 import sys
 
@@ -169,16 +170,21 @@ class Parser:
                     operand_1 = stack.pop()
                 astnode = self.create_ast_from_expr(op, operand_2, operand_1)
                 stack.append(astnode)
-            elif token.type == "NUMBER":
+            elif token.specific_type == "INT":
                 token = Integer(token.value)
+                stack.append(token)
+            elif token.specific_type == "FLOAT":
+                token = Float(token.value)
                 stack.append(token)
             elif token.type == "ID":
                 token = Varexpr(token.value)
                 stack.append(token)
         final = stack[0]
         try:
-            if final.type == "NUMBER":
+            if final.specific_type == "INT":
                 return Integer(final.value)
+            if final.specific_type == "FLOAT":
+                return Float(final.value)
             elif final.type == "ID":
                 return Varexpr(final.value)
         except AttributeError:

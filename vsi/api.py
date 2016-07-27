@@ -13,6 +13,7 @@ OPERATOR = "OPERATOR"
 STATEMENT = "STATEMENT"
 INT = "INT"
 SYMBOL = "SYMBOL"
+FLOAT = "FLOAT"
 
 tokens_exprs = [
     # reject whitespaces and comments
@@ -44,6 +45,7 @@ tokens_exprs = [
     (r'(while) ', RESERVED, STATEMENT, 0),
     (r'(do)[ \n\t]{1,}', RESERVED, STATEMENT, 0),
     (r'(done)[ \n\t]{1,}', RESERVED, STATEMENT, 0),
+    (r'([0-9]+\.[0-9]+)', NUMBER, FLOAT, 0),
     (r'([0-9]+)', NUMBER, INT, 0),
     (r'([_A-Za-z][A-Za-z0-9_]*)', ID, None, 0),
 ]

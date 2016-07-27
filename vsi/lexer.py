@@ -60,3 +60,5 @@ class Lexer:
         for token in self.tokens:
             if token.specific_type == "INT":
                 token.value = int(token.value)
+            elif token.specific_type == "FLOAT":
+                token.value = float(token.value)
