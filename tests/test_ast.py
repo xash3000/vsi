@@ -3,6 +3,7 @@ from vsi.ast import (
     AST,
     PrintStatement,
     Integer,
+    Float,
     Varexpr,
     BinOpexpr,
     RelOpexpr,
@@ -62,6 +63,21 @@ class TestInteger(TestCase):
         env = {}
         result = integer.eval(env)
         self.assertEqual(result, 10)
+
+
+class TestFloat(TestCase):
+
+    def test___repr___method(self):
+        _float = Float(1.2)
+        _float_repr = repr(_float)
+        expected_repr = "Float(1.2)"
+        self.assertEqual(_float_repr, expected_repr)
+
+    def test_eval_method(self):
+        _float = Float(1.2)
+        env = {}
+        result = _float.eval(env)
+        self.assertEqual(result, 1.2)
 
 
 class TestVarexpr(TestCase):

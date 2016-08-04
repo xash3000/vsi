@@ -23,6 +23,9 @@ class Parser:
         self.pos = pos
         self.ast = AST()
 
+    def __repr__(self):
+        return "Parser({}, {}, {})".format(self.tokens, self.pos, self.ast)
+
     def parse(self):
         self.parse_statements(ast=self.ast)
         return self.ast

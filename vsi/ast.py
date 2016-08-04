@@ -49,7 +49,7 @@ class Float(Equality):
     def __init__(self, f):
         self.f = f
 
-    def __repr___(self):
+    def __repr__(self):
         return "Float({})".format(self.f)
 
     def eval(self, env):
