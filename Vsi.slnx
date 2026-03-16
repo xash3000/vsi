@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Vsi.Cli/Vsi.Cli.csproj" />
+  <Project Path="Vsi.Core/Vsi.Core.csproj" />
+  <Project Path="Vsi.Tests/Vsi.Tests.csproj" />
+</Solution>
