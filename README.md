@@ -1,9 +1,9 @@
 # vsi
 
-*V*ery *S*imple *I*nterpreter written in C#.
+<ins>V</ins>ery <ins>S</ins>imple <ins>I</ins>nterpreter written in C#.
 
 ## Installation
-
+You can download precompiled binaries from the releases page.
 Alternatively, you can build it from source. You will need the [.NET SDK](https://dotnet.microsoft.com/download) installed.
 After that, run this command to build the project:
 
@@ -60,6 +60,6 @@ see more examples at Examples/ folder
 
 ## LICENSE
 
-**MIT**
+**GNU GPLv3**
 
 see LICENSE file for more information.
